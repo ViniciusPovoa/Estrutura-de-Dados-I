@@ -1,0 +1,47 @@
+Título: Validar se o cliente foi desenfileirado e recebeu o chocolate que estava empilhado.
+
+Caso teste 1:
+Cinco clientes fizeram seus respectivos pedidos e os consumiram, após isso o programa irá chamar a função “addCliente” que vai enfileirar os cinco clientes em ordem de chegada.  O primeiro cliente da fila compra uma picanha, um bife e uma feijoada, com quantidades de 1, 2 e 3 respectivamente. O valor total da compra é de $140.00. O programa irá chamar a função "desenfileirar" para remover esse cliente da fila. Antes de ser removido, o programa irá atribuir um chocolate ao cliente, que será o chocolate de sabor "Morango" que está no topo da pilha. A saída esperada é: "O cliente 1 pagou a comanda saiu da fila e recebeu um chocolate de sabor Morango."
+
+
+Caso teste 2:
+1. Inicialmente, a pilha de chocolates contém os seguintes sabores: "Ao Leite", "Meio Amargo", "Amargo", "Chocomenta" e "Morango", com o topo apontando para o índice 4 (correspondente ao sabor "Morango").
+2. Um cliente chamado João é adicionado à fila, com uma comanda que contém 2 unidades do prato "Picanha" (código 0), 1 unidade do prato "Bife" (código 1) e 1 unidade do prato "Feijoada" (código 2). A quantidade de cada prato está armazenada no vetor qtd do struct cliente e o código do prato está armazenado no vetor comanda. O valor total da compra de João é de 2 * 60.00 + 40.00 + 20.00 = 140.00.
+3. Um segundo cliente, chamado Maria, é adicionado à fila, com uma comanda que contém 1 unidade do prato "Strogonoff" (código 3) e 2 unidades do prato "Macarrao" (código 4). A quantidade de cada prato está armazenada no vetor qtd do struct cliente e o código do prato está armazenado no vetor comanda. O valor total da compra de Maria é de 15.00 + 2 * 17.00 = 49.00.
+4. A função desenfileirar é chamada e o primeiro cliente da fila, João, é removido. Antes de ser removido, a função chocolates é chamada para atribuir um chocolate a João, que recebe o sabor "Morango" (que está no topo da pilha de chocolates). A comanda de João é mostrada e o valor total da compra dele é exibido.
+5. A função desenfileirar é chamada novamente e o segundo cliente da fila, Maria, é removida. Antes de ser removida, a função chocolates é chamada para atribuir um chocolate a Maria, que recebe o sabor "Chocomenta" (que agora está no topo da pilha de chocolates). A comanda de Maria é mostrada e o valor total da compra dela é exibido.
+6. Se a função desenfileirar for chamada novamente, a mensagem "A fila esta vazia!" será exibida, pois todos os clientes já foram removidos.
+
+
+
+
+Caso teste 3: 
+Criação de 5 chocolates:
+Morango
+Chocomenta
+Ao Leite
+Meio Amargo
+Amargo
+Criação de 5 pratos:
+Picanha - R$ 60,00
+Bife - R$ 40,00
+Feijoada - R$ 20,00
+Strogonoff - R$ 15,00
+Macarrão - R$ 17,00
+Criação de uma fila vazia
+Adição de um cliente à fila com a seguinte comanda:
+Picanha - 1 unidade
+Bife - 2 unidades
+Feijoada - 1 unidade
+Valor total da compra: R$ 160,00
+Adição de outro cliente à fila com a seguinte comanda:
+Strogonoff - 2 unidades
+Macarrão - 1 unidade
+Valor total da compra: R$ 49,00
+Remoção do primeiro cliente da fila:
+Mostra a comanda do cliente (Picanha - 1 unidade, Bife - 2 unidades, Feijoada - 1 unidade, Valor total da compra: R$ 160,00)
+Atribui o chocolate "Morango" ao cliente
+Remoção do segundo cliente da fila:
+Mostra a comanda do cliente (Strogonoff - 2 unidades, Macarrão - 1 unidade, Valor total da compra: R$ 49,00)
+Atribui o chocolate "Chocomenta" ao cliente
+
