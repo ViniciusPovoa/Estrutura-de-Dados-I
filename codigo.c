@@ -239,6 +239,7 @@ void cardapio(Cliente *cliente)
 
         case 6:
             imprimirFila();
+            break;
 
         case 7:
             mostrarItensPedido(*cliente);
