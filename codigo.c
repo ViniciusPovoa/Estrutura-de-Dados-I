@@ -113,17 +113,6 @@ void desenfileirar()
     printf("=============================================================\n");
 }
 
-//A função "desenfi" é usada para remover o cliente no início da fila sem mostrar a comanda dele.
-void desenfi()
-{
-    int i = 0;
-    if (fila.inicio == fila.fim)
-    {
-        printf("A fila esta vazia!\n");
-        return;
-    }
-    fila.inicio++;
-}
 
 //A função "imprimirFila" é usada para mostrar todos os clientes na fila e suas respectivas comandas.
 void imprimirFila()
@@ -261,6 +250,8 @@ int main()
         Cliente cliente = {{-1}, {-1}, 0.0};
         cardapio(&cliente);
     }
+    imprimirFila();
+    desenfileirar();
     imprimirFila();
     desenfileirar();
     imprimirFila();
