@@ -108,6 +108,7 @@ void desenfileirar()
     printf("O cliente %d pagou a comanda saiu da fila e recebeu um chocolate\n", fila.inicio+1);
      // atribuir chocolate antes de desenfileirar
     chocolates(&fila.clientes[fila.inicio]);
+    mostrarItensPedido(fila.clientes[fila.inicio]);
     fila.inicio++;
     printf("=============================================================\n");
 }
@@ -157,21 +158,16 @@ void imprimirPilhaChocolates()
 }
 
 // Função imprimir consumidos é chamado quando o cliente quer relembrar o que ele já pediu.
-void imprimirConsumidos()
-{
-    int i, j;
-    for (i = fila.inicio; i < fila.fim; i++)
-    {
-        printf("Cliente %d itens ja pedidos: \n", i + 1);
-        for (j = 0; j < 5; j++)
-        {
-            if (fila.clientes[i].comanda[j] != -1 && fila.clientes[i].qtd[j] != 0)
-            {
-                printf("%d x %s (R$%.2f)\n", fila.clientes[i].qtd[j], itens_prato[fila.clientes[i].comanda[j]].nome, itens_prato[fila.clientes[i].comanda[j]].preco * fila.clientes[i].qtd[j]);
-            }
+void mostrarItensPedido(Cliente cliente) {
+    printf("\n\n Itens do pedido do cliente: \n");
+    for (int i = 0; i < 5; i++) {
+        if (cliente.comanda[i] != -1) {
+            printf("%s - Quantidade: %d - Preco: %.2f\n", itens_prato[cliente.comanda[i]].nome, cliente.qtd[i], itens_prato[cliente.comanda[i]].preco * cliente.qtd[i]);
         }
     }
+    printf("Valor total da compra: %.2f\n", cliente.valorCompra);
 }
+
 
 //A função "cardapio" é uma função que exibe um cardápio de itens disponíveis para o cliente escolher e adicionar à sua compra, e realiza as operações de adição de itens ao pedido do cliente, calcular o valor total da compra, e adicionar o cliente à fila de clientes que já finalizaram suas compras, ela também tem opções para imprimir fila de clientes, imprimir os itens consumidos e pilha de chocolates. Além disso, a função contém um loop que permite ao cliente escolher vários itens até que ele escolha sair do cardápio.
 void cardapio(Cliente *cliente)
@@ -245,9 +241,7 @@ void cardapio(Cliente *cliente)
             imprimirFila();
 
         case 7:
-            addCliente(*cliente);
-            imprimirConsumidos();
-            desenfi();
+            mostrarItensPedido(*cliente);
             break;
 
         case 8:
