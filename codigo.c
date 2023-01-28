@@ -161,7 +161,7 @@ void imprimirPilhaChocolates()
 void mostrarItensPedido(Cliente cliente) {
     printf("\n\n Itens do pedido do cliente: \n");
     for (int i = 0; i < 5; i++) {
-        if (cliente.comanda[i] != -1) {
+        if (cliente.comanda[i]) {
             printf("%s - Quantidade: %d - Preco: %.2f\n", itens_prato[cliente.comanda[i]].nome, cliente.qtd[i], itens_prato[cliente.comanda[i]].preco * cliente.qtd[i]);
         }
     }
