@@ -244,6 +244,8 @@ void cardapio(Cliente *cliente)
 
 int main()
 {
+    //Em cada iteração, uma estrutura "Cliente" é criada com valores padrão de -1 para as duas primeiras variáveis e 0.0 para a terceira. 
+    //Em seguida, a função "cardapio" é chamada com a estrutura "Cliente" como argumento.
     int i;
     for (i = 0; i < 5; i++)
     {
